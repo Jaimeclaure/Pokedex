@@ -1,0 +1,159 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f0f8ff;
+    background-image: url('https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/sword-shield/pokemon-in-the-wild.png'); /* Fondo temático */
+    background-size: cover; /* Ajusta el fondo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#game-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.player-container {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.6); /* Más transparente */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s; /* Añade una transición */
+}
+
+.player-container:hover {
+    background-color: rgba(224, 224, 224, 06); /* Color al pasar el mouse */
+}
+
+h2 {
+    color: #1f2f86;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+.pokemon-card {
+    background-color: rgba(240, 240, 240, 0.6); /* Más transparente */
+    border: 2px solid rgba(204, 204, 204, 0.5); /* Más transparente */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.pokemon-card.selected {
+    border-color: #ffcb05;
+    transform: scale(1.05);
+}
+
+button {
+    background-color: rgba(255, 203, 5, 0.6); /* Más transparente */
+    color: #2a75bb;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 203, 5, 0.5); /* Más transparente al pasar el mouse */
+    
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+.pokemon-img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.resultado-button {
+    display: none; /* Escondido inicialmente */
+    position: fixed; /* Fijo en la ventana */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Alinea el botón al centro */
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a75bb;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    z-index: 1000; /* Asegura que el botón esté en la parte superior */
+    animation: pop-up 0.5s ease-out; /* Animación de entrada */
+}
+
+@keyframes pop-up {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.resultado-button:hover {
+    background-color: rgba(255, 203, 5, 0.8); /* Color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+
+
+@media (max-width: 768px) {
+    #game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-container {
+        width: 100%;
+    }
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin-bottom: 20px; /* Espacio entre la imagen y el título */
+}
+
+.pokemon-logo {
+    width: 30%; /* Ajusta el ancho al 30% */
+    max-width: 100%; /* Asegura que no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.resultado-container {
+    height: 50px; /* Ajusta este valor según necesites */
+    overflow: hidden; /* Oculta cualquier contenido adicional que sobresalga */
+    transition: height 0.3s; /* Transición suave para expandir */
+}
+
+.error-message {
+    height: 50px; /* Igual que el contenedor del resultado */
+    overflow: hidden;
+    transition: height 0.3s; /* Transición suave para expandir */
+}

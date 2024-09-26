@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Cartas Pokémon</title>
+    <link rel="stylesheet" href="poke_estilo.css">
+    <script src="https://www.youtube.com/iframe_api"></script> <!-- API de YouTube -->
+</head>
+<body>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1920px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokémon Logo" class="pokemon-logo">
+    </div>
+        
+    <div id="game-container">
+        <div class="player-container">
+            <h2>Jugador 1</h2>
+            <div id="pokedex1" class="pokedex-container"></div>
+            <button id="baraja1-button" disabled>Barajar Jugador 1</button>
+        </div>
+
+        <div class="player-container">
+            <h2>Jugador 2</h2>
+            <div id="pokedex2" class="pokedex-container"></div>
+            <button id="baraja2-button" disabled>Barajar Jugador 2</button>
+        </div>
+    </div>
+    
+    <button id="resultado-comparacion" class="resultado-button" style="display: none;"></button>
+
+    <div id="resultado-comparacion"></div>
+    <div id="error-messages" class="error-message"></div>
+
+    <div id="player"></div> <!-- Contenedor para el reproductor de YouTube -->
+
+    <script src="reglas2b.js"></script>
+    <script src="baraja1.js"></script>
+    <script src="baraja2.js"></script>
+    <script src="comparar.js"></script>
+    <script src="audioPlayer.js"></script> <!-- Invocamos el archivo JS -->
+</body>
+</html>
